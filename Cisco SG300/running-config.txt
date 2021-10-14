@@ -1,0 +1,428 @@
+config-file-header
+cisco-sg300
+v1.4.11.5 / R800_NIK_1_4_220_026
+CLI v1.0
+set system mode switch 
+
+file SSD indicator encrypted
+@
+ssd-control-start 
+ssd config 
+ssd file passphrase control unrestricted 
+no ssd file integrity control 
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0 
+!
+vlan database
+vlan 4091-4092 
+exit
+voice vlan state disabled 
+voice vlan oui-table add 0001e3 Siemens_AG_phone________
+voice vlan oui-table add 00036b Cisco_phone_____________
+voice vlan oui-table add 00096e Avaya___________________
+voice vlan oui-table add 000fe2 H3C_Aolynk______________
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone___________
+voice vlan oui-table add 00e075 Polycom/Veritel_phone___
+voice vlan oui-table add 00e0bb 3Com_phone______________
+hostname cisco-sg300
+no passwords complexity enable 
+passwords aging 0 
+username admin password encrypted 1a818a8e57e6bb5fc9469e8ca74115f195693e5f privilege 15 
+ip ssh server
+ip ssh password-auth 
+ip telnet server
+!
+interface vlan 4091
+ name LAN 
+ ip address 192.168.91.2 255.255.255.0 
+ no ip address dhcp 
+!
+interface vlan 4092
+ name IOT 
+!
+interface gigabitethernet1
+ description WIFI
+ switchport trunk allowed vlan add 4091-4092 
+!
+interface gigabitethernet2
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet3
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet4
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet5
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet6
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet7
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet8
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet9
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet10
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet11
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet12
+ switchport mode access 
+ switchport access vlan 4091 
+!
+interface gigabitethernet13
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet14
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet15
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet16
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet17
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet18
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet19
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet20
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet21
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet22
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet23
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet24
+ switchport mode access 
+ switchport access vlan 4092 
+!
+interface gigabitethernet27
+ channel-group 1 mode auto 
+!
+interface gigabitethernet28
+ channel-group 1 mode auto 
+!
+interface Port-channel1
+ description PFSENSE
+ switchport trunk allowed vlan add 4091-4092 
+!
+exit
+ip default-gateway 192.168.91.1 
+encrypted ip ssh-client key rsa key-pair
+---- BEGIN SSH2 ENCRYPTED PRIVATE KEY ----
+Comment: RSA Private Key
+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
+---- END SSH2 PRIVATE KEY ----
+
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: RSA Public Key
+AAAAB3NzaC1yc2EAAAADAQABAAABAQC8pcXnVqRQOCzjO04JLAEwemJeV25WU+tNHrd+Ij
+l39WDQ8VvdtSZ33QCSL7OK9+dSP3V66pDD4brSslymaZraugpYnocL4xROcZZ5t6VKVLQV
+4nBdmPOWQRXllx0qeSRBppThAyehIi2nUgOQ6rBb8LymIvAkGCpw8Z3GCngtbKMX+qzgQF
+paoOS5QS3MPO8sW+O2y4IijkKGFTY7qEW2oa4J+FyfAW8BHz1aYxmxb83gjpSWf6Hrcqpb
+wlsQMguCPlw77zupIh1F1PSoX4vPujVePvj+3wq6Ai4OwaPHGgypUOF0PndosqMt2xgYdb
+mxBkKnRrebSOqQsLkvTqdj
+---- END SSH2 PUBLIC KEY ----
+.
+encrypted ip ssh-client key dsa key-pair
+---- BEGIN SSH2 ENCRYPTED PRIVATE KEY ----
+Comment: DSA Private Key
+o21Z3H+CTEjKgTfHlfFvib8/N7lulAYutRjR/gtF4hwt1T8sjcRKfc8/eh/Yob1KNQ12MX
+a+6EDNPjpL2Sj8seO5CtNHWlU9LEIIzBDKXmc3vX9e93BE2cSBCaTdGtiM2jXgFOKTHHXG
+p2IM+K7UmsNxCgUywg+/5Nl5SxpMyz3dlLpQmarGoy6NgQcjf4CHeL40I0902uVZrrN3EJ
+2FHYaT1VnuYC8iSypJce3fFnmiewVj0NIiQLR0C8dSeRlF5x9errYnizOEf6Xn6oQc3PYM
+2zKHxU934UVOqxo+Ivteoq8cOuosDkWR7Cw3y9JSw0KlpioPzv6Q8S+xUaefMmLVNReHua
+cHGQOBYnFr9GgehzMZBnOfNF80q9NYeFThiUm8wA5fT6Vdb6q8ELDPiZJa4DH3j2nJb2DW
+uiakUIY4G+zrmLrl6B0GSF20K2pqcsDyVLmwfVVGX11sd2MUKwPBjqKLQEDwhGTOPYbA+H
+qG13joH+mkgoiuNx7c3DQO+ap1fb4HNrRSZ62SUu9UdgTnHYdWBeaNS9SyQs7QhYpR0/DX
+atuCyjbbFbd4Ska+BVMY/cTdhXzZ2ZOigRvtpmqsUXFUmfLJKktB7kHciF0eL0MzpnWOgp
+xWXWm9lVTXjKcrpamD5RFZRVpqBpsBe6Wq08QiktixZTOH7Zs3qqV8GZCRnjEhugw9expV
+0keDl4mj+4Eo3NDQUpytGBdNR2jayvbjVMbtwP+12zrVjCoeOcGpX94ZQx2/2tn8L91M8U
+lEo6L7qkjeF+owIKXIhPzKA4IRjQbtLJPg5m5vd6LrWAtzhVv9udFIROlBftac
+---- END SSH2 PRIVATE KEY ----
+
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: DSA Public Key
+AAAAB3NzaC1kc3MAAACBAK6zG67/dY2z1X3Yyaiz6JiPE2P1qMz2kG6rm+SPPxsl1OZ69O
+ycLPHsZtSuIyTqCFwjGvn9s8upxoJGyF5hO4m8ajq/Q1o2hMAFe/x/zoQdg4AX72lgUVz2
+jdi7GzJ5Hcy1zm91F2xEBGf6U/DUZgVIZwbRtJCaiNVh20/DMMbhAAAAFQCukBBjmWfit6
+5N5/KqZB1p7AI6qwAAAIBI2fX0RPEm3udM7IKlZgNh40lxF0hqmFP1moUdJESU2Xzi4PeJ
+VQKL8ru8kJQnrx2RLrVYOC0uB0ObJQ2oxmWyiTU5gnNyTuyc8sksqnc2qrBRzkhmAC0uhy
+W9o9BHWOKa9avTKTEEqeU8faupJKDYWhAFZXl/RE9UW6KxEdLUJgAAAIEAqfMbOgo8KiD2
+2FSbGwc+urltK/tXg6/fWfYr8hlqV5UHrGl1wYrYL6rcWsEJKffJdgstUYdbhH4wqKg/N4
+pYCdXF6XcsIMA6s7SaNBCGQqf7whCuAdaem/bdwZtWOjYy/0+11jpRg40jImxhGB+Q81Sx
+qocxOy4t8sPistMXZqc=
+---- END SSH2 PUBLIC KEY ----
+.
+encrypted crypto key import rsa
+---- BEGIN SSH2 ENCRYPTED PRIVATE KEY ----
+Comment: RSA Private Key
++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
+---- END SSH2 PRIVATE KEY ----
+
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: RSA Public Key
+AAAAB3NzaC1yc2EAAAADAQABAAABAQDnqthYge1T21T9RJJIhMM/RT8kl5wkNJrKO64mF8
+pU3ydMLHUTcOWBn+x2kHvM6eCPHg1kErKMBDBZAsiQalEcFBm5tv658/VbETpd2l63Fxtk
+nEVr3sL4GBxXjJpvvuKX839SeDPM8xjsplT+jy44SoWKm6jJ+U0vL/EhnUsvWPQPci1r8+
+6zFel9rAWTPhNTaXehxoSjFq0ChQh/7FtLrYFHARF+EMnt9qNMG2406u65nWmU7/lK+3Wa
+X/WNv7WHPhCE3manQao4o8A4qJHH11ZD/I6gRpQsvMtlx2OI/AhN1RwStK4wMTGjQvLcSD
+jd9tGVEiVwYkOLYRGdDj51
+---- END SSH2 PUBLIC KEY ----
+.
+encrypted crypto key import dsa
+---- BEGIN SSH2 ENCRYPTED PRIVATE KEY ----
+Comment: DSA Private Key
+JCYl9/vc7mZB3Z2kpfLHRy2msKZ3JcwNZOkvV4a9Vij9DgbNQ5MWXd5DmmazkeZgxx8GxT
+EvSjuCeXuXlaNNn1RJa4ALPJ+o6TitXS2x2jTk+rnnKz459E1tiphZ05pUz80raXNjD/GC
+uIhfz5GinmMA5YH32+2A8oeXwB+R82fm0xtWETxSKt9x/GKtZPbds6GEbuz00DpTcok/ZA
+pMokXh6x2fUEoD6LyUEaXePAdrI+PcCREzhi/c7bfm0NKum7IY1QyjO6slLn/mqObeeiXx
+H+u8d20VVpRbAU4ZM0F1PN6P7xlVdJKX3zf+HyZ3s+CYsm+CxZKfvSy/qmzcD8F3cxAUJb
+hLr0t3QQFof4yPChRsc4+ZLj3Fdb8o04J4P42jgtFGOs8E6oq0IE1bcTjrbSuvZ+k5hnKo
+2TrHcbS/JVTWUt7E1qXEIUa/9CqkN7YDc9gyddizU21hYC8pptP1NLoMGKVMNfVCrFshJx
+c/oPjh66FwWEFHQSZ+asiqb/o9HZ9+xHpzIYeLlz6UE1cFMKI/j+L7zCjObCbWZjmL0tnk
+4bdT1zOWla51pZ2+pWKC63z74DsjMVTFZS2PvHHkL9OXdIEpakXI/8mdcz/Md9hFTMFC2m
+bJRGpFmjnmsKuFx4OPUSM3nr2FoljHx97SNbN74jAspDIOg6qpVne2UfKp9qgLicwgZ8IE
+Zktzhl0B439NhXmVXhVv1cTcciwa5B6IdaYiHbmVG3taSPRBaoJmQR3JuwN05ZxlQbUOlD
+FgFPA+bNvCUGgUcqZCtt0S2BcTtI/MVsRC8rIRJhR+YQ+dD8x0raj89HnMbKYX
+---- END SSH2 PRIVATE KEY ----
+
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: DSA Public Key
+AAAAB3NzaC1kc3MAAACBAO5EZnbOVa6AUCqQjcq0ZaxgQnn5EeFbqiZdSUh5UwgD4JImCT
+UJFIVJkWRefm8gLjwrOpJouBBCIyK2hUvLcjJfAi1v+f3cWuA9zaznlyd5W5qZt3zxVzAj
+hYruQzZ/I94xA1CKNHv78AFUszS/8YsRDQlML7mol2A0s4wcFXRdAAAAFQCwZCoar2JstV
+maIs/oiTZT6OAVuQAAAIB7zeDBsnL5Gh7bvmUz/SDBuqWXSi0DSZ16wNocL+3pUg40mwP9
+ANFPuyw4ikZUNvprsYGQ4oXlAzqL4H1T174aQwXBd6H3v9+K3Wh6v1cV2gr5QPKpSGjJ7f
+mrJcO7PLLeeoijaf53D4xTCNOt/Fu9NU1fzl/+x1l/9oyBDcCefQAAAIAiysf74vwbRTVj
+Yqp+Lo3HOL2d5r0SI0XhzacelZWNxLlggRyFVSUiIA6cfjq32ktxOCmGgGjo3lOIok4cgH
+hZ4uha+gaJBtq2tChIjVHaoOiP6SYMgUjjwWjuM7Mj8fVR51kQbx07yzptOoCRb4kY1FA/
+KcBp3TuQuNWXL6YZ1Q==
+---- END SSH2 PUBLIC KEY ----
+.
+encrypted crypto certificate 1 import
+-----BEGIN RSA ENCRYPTED PRIVATE KEY-----
+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
+-----END RSA PRIVATE KEY-----
+
+-----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAvzabTGotQBlKyrUNFsTNyasRVFSIH7IYtzFVmM0No8MVNwSwnDoHDNUSSS
+O+0J2NSe7CEyyQJQQaMoR67HzJV7vGDS5XDrevb2S/FSxzTLDemq8Cj+Hu8MwzbLN3psvq
+J/pJyvuvrBw0/u/x4jtX7OSW40D9UO5xBRp2x4PByGnDdA44BJFlOcXYIZt3BXUm5G+ZT6
+pgyPjgmM7xPtHySoGjM+mtNQK2cQup79AS0uYSGZ5MWSAb1eUqGEsueXtquWnD96hC6Jx0
+reBpTwXcN+xhnSbQPHov0sQHDE2Dxiupj0JIRnTwPmuYGUlk5T1W2wfCgqzxCxtQgLSKYz
+8MJwIDAQAB
+-----END RSA PUBLIC KEY-----
+-----BEGIN CERTIFICATE-----
+MIIDKzCCAhMCEEgrXHmUMH7zlAIUjr3C73owDQYJKoZIhvcNAQELBQAwVDELMAkG
+A1UEBhMCICAxCjAIBgNVBAgMASAxCjAIBgNVBAcMASAxFTATBgNVBAMMDDE5Mi4x
+NjguOTEuMjEKMAgGA1UECgwBIDEKMAgGA1UECwwBIDAeFw0yMDA0MDgxMzUxNDRa
+Fw0yMTA0MDgxMzUxNDRaMFQxCzAJBgNVBAYTAiAgMQowCAYDVQQIDAEgMQowCAYD
+VQQHDAEgMRUwEwYDVQQDDAwxOTIuMTY4LjkxLjIxCjAIBgNVBAoMASAxCjAIBgNV
+BAsMASAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC/NptMai1AGUrK
+tQ0WxM3JqxFUVIgfshi3MVWYzQ2jwxU3BLCcOgcM1RJJI77QnY1J7sITLJAlBBoy
+hHrsfMlXu8YNLlcOt69vZL8VLHNMsN6arwKP4e7wzDNss3emy+on+knK+6+sHDT+
+7/HiO1fs5JbjQP1Q7nEFGnbHg8HIacN0DjgEkWU5xdghm3cFdSbkb5lPqmDI+OCY
+zvE+0fJKgaMz6a01ArZxC6nv0BLS5hIZnkxZIBvV5SoYSy55e2q5acP3qELonHSt
+4GlPBdw37GGdJtA8ei/SxAcMTYPGK6mPQkhGdPA+a5gZSWTlPVbbB8KCrPELG1CA
+tIpjPwwnAgMBAAEwDQYJKoZIhvcNAQELBQADggEBADozH8DpL0OUQQacDZzzK2ke
+ZU776TFuH2B6vEjHPNAvcuuKDurYqJRv+a8epdrwqIrxNrmuMA/K1nSL8PqZ05pA
+iiXW7NGZFHISZO1NYNFrv8uUrluM/V0IL0nR4n9h1k9+2AnRoT3ZBa2+x2ITCYGZ
+YOSUN9iD1rH237nX+FaTsI6S6f5mVpYkApi93k9QvOpdax3QoQ8tKBFh6RpBWPnr
+abbkOkGlnHFQXCCGfZGDRwS6byEJ6bG2oBfM0o9gQAsc03bSVK4QQlm3xTaDjdKU
+63WLqUcRQXStjB0HVdq6TWSZfm8aR1H08/tQFCpBD6SHOEwDbjEGIC0Wm56eoSY=
+-----END CERTIFICATE-----
+.
+encrypted crypto certificate 2 import
+-----BEGIN RSA ENCRYPTED PRIVATE KEY-----
+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
+-----END RSA PRIVATE KEY-----
+
+-----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAwSTHFE4Gslsj+3IyMo4OREQ64og8X5gCYesy4ib2XIeZ/J2t/DHb7fGGqw
+SzTrm5qavTRGFbvJtg3TJ5HQBp+C+2S82RvUtF2QVOB9y/sXWwkYyc649xsz1aIrqc8pnU
+H2hvmrr2irawavK9EIREYERv5ZegV/yc216Qyk4dljHQg0OtfumY4f6okAsikcYb4/f8XC
+/c2qXrW7GSFg6q9YR0f3mL5W/DjdJnhWO5OoenjI1/HPwBCw/ef3LwQ91lnTjB8A4soRj5
+uorbf0KLpn6RBMD0DzGU1UM2jtzOPDnG8qfj885vYT9NO33X0KGtF6wCexBqoXRYBIcZv1
+245QIDAQAB
+-----END RSA PUBLIC KEY-----
+-----BEGIN CERTIFICATE-----
+MIIDKzCCAhMCEHxOldN9GllJKU6ikQaUG6MwDQYJKoZIhvcNAQELBQAwVDELMAkG
+A1UEBhMCICAxCjAIBgNVBAgMASAxCjAIBgNVBAcMASAxFTATBgNVBAMMDDE5Mi4x
+NjguOTEuMjEKMAgGA1UECgwBIDEKMAgGA1UECwwBIDAeFw0yMDA0MDgxMzUyNDJa
+Fw0yMTA0MDgxMzUyNDJaMFQxCzAJBgNVBAYTAiAgMQowCAYDVQQIDAEgMQowCAYD
+VQQHDAEgMRUwEwYDVQQDDAwxOTIuMTY4LjkxLjIxCjAIBgNVBAoMASAxCjAIBgNV
+BAsMASAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBJMcUTgayWyP7
+cjIyjg5ERDriiDxfmAJh6zLiJvZch5n8na38Mdvt8YarBLNOubmpq9NEYVu8m2Dd
+MnkdAGn4L7ZLzZG9S0XZBU4H3L+xdbCRjJzrj3GzPVoiupzymdQfaG+auvaKtrBq
+8r0QhERgRG/ll6BX/JzbXpDKTh2WMdCDQ61+6Zjh/qiQCyKRxhvj9/xcL9zapetb
+sZIWDqr1hHR/eYvlb8ON0meFY7k6h6eMjX8c/AELD95/cvBD3WWdOMHwDiyhGPm6
+itt/QoumfpEEwPQPMZTVQzaO3M48Ocbyp+Pzzm9hP007fdfQoa0XrAJ7EGqhdFgE
+hxm/XbjlAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAwtoGgF7YxuI1nNxuur+FmT
+t7ke6anCNDABA9sw9d8vJuYt4YEgwdRqfSwbLCh132SAtvXGoaXuHX19amVgIbtu
+WtWBjNF8GTLRsgjTuWn3cYB1gEPlfIBymWVilRADSiRGG/LgdIJEw6RqNo0OD+N7
+Y5Mt6RfvZpup7vlyT+OZnW4hQEsPnRcfsvWtuTVyj+rrWu0WyftO6JpNXg3rg5ex
+4Yz3nuXX/fcNo3hwg8A0Uq0N92ojoBiIhVBAD4wwo+ePL3dy0LyLpT4TBzFrI1Lh
+a+1caY7KilJyobVznRD2yCG7LCrSYDwiFPty1gDfC8H6+Uec4AVmqpBPn1bTXBs=
+-----END CERTIFICATE-----
+.
