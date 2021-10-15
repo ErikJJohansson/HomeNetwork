@@ -1,0 +1,27 @@
+- name: Gather Facts
+  gather_facts: no
+  hosts: sg300
+  vars:
+    - configs_dir: configs
+
+  tasks:
+  - name: CiscoSMB - Gather Facts - subset default
+    community.ciscosmb.facts:
+      gather_subset:
+        - default
+      # when: ansible_network_os == 'community.ciscosmb.ciscosmb'
+
+  - name: CiscoSMB - Gather Facts - subset config
+    community.ciscosmb.facts:
+      gather_subset:
+        - config
+      # when: ansible_network_os == 'community.ciscosmb.ciscosmb'
+
+  - name: Create configuration directory
+    local_action: file path={{ configs_dir }} state=directory
+    run_once: true
+    check_mode: no
+    changed_when: no
+
+  - name: Save running config
+    local_action: copy content={{ ansible_net_config }} dest={{ configs_dir }}/{{ inventory_hostname }}_net_config
