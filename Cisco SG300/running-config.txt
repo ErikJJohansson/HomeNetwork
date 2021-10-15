@@ -24,6 +24,7 @@ voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
 voice vlan oui-table add 00d01e Pingtel_phone___________
 voice vlan oui-table add 00e075 Polycom/Veritel_phone___
 voice vlan oui-table add 00e0bb 3Com_phone______________
+disable ports leds
 hostname cisco-sg300
 no passwords complexity enable 
 passwords aging 0 
