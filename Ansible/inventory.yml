@@ -1,0 +1,24 @@
+---
+
+firewalls:  
+  hosts:
+    pfsense: 
+      ansible_host: 192.168.91.1
+
+switches:
+  vars:
+    gather_facts: no
+
+    ansible_connection: network_cli
+    ansible_network_os: community.ciscosmb.ciscosmb
+    ansible_ssh_user: admin
+    ansible_ssh_pass: Loumanchu
+
+  hosts:
+    sg300: 
+      ansible_host: 192.168.91.2
+
+wifi_aps:
+  hosts:
+    ews850: 
+      ansible_host: 192.168.91.3
