@@ -12,18 +12,11 @@ ssd file passphrase control unrestricted
 no ssd file integrity control 
 ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0 
 !
+no spanning-tree
 vlan database
 vlan 4091-4092 
 exit
 voice vlan state disabled 
-voice vlan oui-table add 0001e3 Siemens_AG_phone________
-voice vlan oui-table add 00036b Cisco_phone_____________
-voice vlan oui-table add 00096e Avaya___________________
-voice vlan oui-table add 000fe2 H3C_Aolynk______________
-voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
-voice vlan oui-table add 00d01e Pingtel_phone___________
-voice vlan oui-table add 00e075 Polycom/Veritel_phone___
-voice vlan oui-table add 00e0bb 3Com_phone______________
 disable ports leds
 hostname cisco-sg300
 no passwords complexity enable 
@@ -148,6 +141,7 @@ interface Port-channel1
  switchport trunk allowed vlan add 4091-4092 
 !
 exit
+macro auto disabled 
 ip default-gateway 192.168.91.1 
 encrypted ip ssh-client key rsa key-pair
 ---- BEGIN SSH2 ENCRYPTED PRIVATE KEY ----
