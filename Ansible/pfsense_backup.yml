@@ -1,0 +1,12 @@
+- name: pfsense
+  gather_facts: no
+  hosts: pfsense
+  vars:
+    - configs_dir: configs
+
+  tasks:
+  - name: Get pfsense config
+    ansible.builtin.fetch:
+      src: /cf/conf/config.xml
+      dest: "{{ configs_dir }}/pfsense_config.xml"
+      flat: yes

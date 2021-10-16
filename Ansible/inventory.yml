@@ -2,8 +2,11 @@
 
 firewalls:  
   hosts:
-    pfsense: 
+    pfsense:
+      gather_facts: no 
       ansible_host: 192.168.91.1
+      ansible_ssh_user: admin
+      ansible_connection: paramiko
 
 switches:
   vars:
