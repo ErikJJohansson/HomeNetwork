@@ -5,14 +5,8 @@
     - configs_dir: configs
 
   tasks:
-  - name: Enter magic key
-    ansible.builtin.shell: 1d68d24ea0d9bb6e19949676058f1b93
+  - name: run config backup script on AP
+    raw: /etc/cfgbackup.sh
 
-  - name: login command
-    ansible.builtin.shell: login
-
-  - name: Copy config from Wifi AP
-    ansible.builtin.fetch:
-      src: /tmp/backup.gz
-      dest: "{{ configs_dir }}/ews850.gz"
-      flat: yes
+  - name: Copy file from Wifi AP to local config directory
+    local_action: command scp {{ ansible_ssh_user }}@{{ ansible_host }}:/tmp/backup.gz "{{ configs_dir }}/{{ inventory_hostname }}_config.gz"
