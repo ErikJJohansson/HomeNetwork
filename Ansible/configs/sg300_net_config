@@ -35,8 +35,9 @@ interface vlan 4092
  name IOT
 !
 interface gigabitethernet1
- description WIFI
- switchport trunk allowed vlan add 4091-4092
+ switchport mode access
+ switchport access vlan 4091
+ switchport forbidden default-vlan
 !
 interface gigabitethernet2
  switchport mode access
@@ -79,8 +80,8 @@ interface gigabitethernet11
  switchport access vlan 4091
 !
 interface gigabitethernet12
- switchport mode access
- switchport access vlan 4091
+ description WIFI
+ switchport trunk allowed vlan add 4091-4092
 !
 interface gigabitethernet13
  switchport mode access
@@ -127,6 +128,15 @@ interface gigabitethernet23
  switchport access vlan 4092
 !
 interface gigabitethernet24
+ switchport mode access
+ switchport access vlan 4092
+ switchport forbidden default-vlan
+!
+interface gigabitethernet25
+ switchport mode access
+ switchport access vlan 4091
+!
+interface gigabitethernet26
  switchport mode access
  switchport access vlan 4092
 !
