@@ -22,5 +22,8 @@ switches:
 
 wifi_aps:
   hosts:
-    ews850: 
+    ews850:
+      gather_facts: no 
       ansible_host: 192.168.91.3
+      ansible_ssh_user: admin
+      ansible_connection: ssh
