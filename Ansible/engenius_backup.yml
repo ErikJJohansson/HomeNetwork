@@ -4,9 +4,22 @@
   vars:
     - configs_dir: configs
 
+#  vars_prompt:
+#    - name: password
+#      prompt: enter password
+  
   tasks:
-  - name: run config backup script on AP
-    raw: /etc/cfgbackup.sh
+#  - name: run config backup script on AP
+#    raw: /etc/cfgbackup.sh
+
+#  - name: new script run method
+#    local_action: command sshpass -p {{ password }} ssh {{ ansible_ssh_user }}@{{ ansible_host }} "/etc/cfgbackup.sh"
+
+#  - name: Copy file from Wifi AP to local config directory
+#    local_action: command sshpass -p {{ password }} scp {{ ansible_ssh_user }}@{{ ansible_host }}:/tmp/backup.gz "{{ configs_dir }}/{{ inventory_hostname }}_config.gz"
+
+  - name: new script run method
+    local_action: command ssh {{ ansible_ssh_user }}@{{ ansible_host }} "/etc/cfgbackup.sh"
 
   - name: Copy file from Wifi AP to local config directory
     local_action: command scp {{ ansible_ssh_user }}@{{ ansible_host }}:/tmp/backup.gz "{{ configs_dir }}/{{ inventory_hostname }}_config.gz"

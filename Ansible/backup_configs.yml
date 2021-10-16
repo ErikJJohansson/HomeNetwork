@@ -38,3 +38,20 @@
       src: /cf/conf/config.xml
       dest: "{{ configs_dir }}/pfsense_config.xml"
       flat: yes
+
+- name: Backup WiFi AP
+  gather_facts: no
+  hosts: ews850
+  vars:
+    - configs_dir: configs
+
+  vars_prompt:
+    - name: password
+      prompt: enter password
+  
+  tasks:
+  - name: run config backup script on AP
+    raw: /etc/cfgbackup.sh
+
+  - name: Copy file from Wifi AP to local config directory
+    local_action: command sshpass -p {{ password }} scp {{ ansible_ssh_user }}@{{ ansible_host }}:/tmp/backup.gz "{{ configs_dir }}/{{ inventory_hostname }}_config.gz"
