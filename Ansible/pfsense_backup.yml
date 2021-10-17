@@ -1,3 +1,4 @@
+---
 - name: pfsense
   gather_facts: no
   hosts: pfsense
