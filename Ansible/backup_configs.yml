@@ -1,57 +1,6 @@
-- name: Gather Facts
-  gather_facts: no
-  hosts: sg300
-  vars:
-    - configs_dir: configs
 
-  tasks:
-  - name: CiscoSMB - Gather Facts - subset default
-    community.ciscosmb.facts:
-      gather_subset:
-        - default
-      # when: ansible_network_os == 'community.ciscosmb.ciscosmb'
+- import_playbook: engenius_backup.yml
 
-  - name: CiscoSMB - Gather Facts - subset config
-    community.ciscosmb.facts:
-      gather_subset:
-        - config
-      # when: ansible_network_os == 'community.ciscosmb.ciscosmb'
+- import_playbook: pfsense_backup.yml
 
-  - name: Create configuration directory
-    local_action: file path={{ configs_dir }} state=directory
-    run_once: true
-    check_mode: no
-    changed_when: no
-
-  - name: Save running config
-    local_action: copy content={{ ansible_net_config }} dest={{ configs_dir }}/{{ inventory_hostname }}_net_config
-
-- name: Backup Firewall
-  gather_facts: no
-  hosts: pfsense
-  vars:
-    - configs_dir: configs
-
-  tasks:
-  - name: Get pfsense config
-    ansible.builtin.fetch:
-      src: /cf/conf/config.xml
-      dest: "{{ configs_dir }}/pfsense_config.xml"
-      flat: yes
-
-- name: Backup WiFi AP
-  gather_facts: no
-  hosts: ews850
-  vars:
-    - configs_dir: configs
-
-  vars_prompt:
-    - name: password
-      prompt: enter password
-  
-  tasks:
-  - name: run config backup script on AP
-    raw: /etc/cfgbackup.sh
-
-  - name: Copy file from Wifi AP to local config directory
-    local_action: command sshpass -p {{ password }} scp {{ ansible_ssh_user }}@{{ ansible_host }}:/tmp/backup.gz "{{ configs_dir }}/{{ inventory_hostname }}_config.gz"
+- import_playbook: gather_facts.yml

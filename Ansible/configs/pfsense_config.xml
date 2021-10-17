@@ -183,6 +183,34 @@
 				<numberoptions></numberoptions>
 			</staticmap>
 			<staticmap>
+				<mac>44:61:32:60:aa:a9</mac>
+				<cid></cid>
+				<ipaddr>192.168.91.40</ipaddr>
+				<hostname>ecobee</hostname>
+				<descr></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime></defaultleasetime>
+				<maxleasetime></maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<numberoptions></numberoptions>
+			</staticmap>
+			<staticmap>
 				<mac>c8:d0:83:ab:a2:38</mac>
 				<cid></cid>
 				<ipaddr>192.168.91.50</ipaddr>
@@ -242,6 +270,90 @@
 				<filename64arm></filename64arm>
 				<numberoptions></numberoptions>
 			</staticmap>
+			<staticmap>
+				<mac>58:d3:49:32:33:a5</mac>
+				<cid></cid>
+				<ipaddr>192.168.91.53</ipaddr>
+				<hostname>homepod-kitchen</hostname>
+				<descr></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime></defaultleasetime>
+				<maxleasetime></maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<numberoptions></numberoptions>
+			</staticmap>
+			<staticmap>
+				<mac>4c:20:b8:db:07:94</mac>
+				<cid></cid>
+				<ipaddr>192.168.91.54</ipaddr>
+				<hostname>homepod-lille</hostname>
+				<descr></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime></defaultleasetime>
+				<maxleasetime></maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<numberoptions></numberoptions>
+			</staticmap>
+			<staticmap>
+				<mac>d4:90:9c:f0:89:e1</mac>
+				<cid></cid>
+				<ipaddr>192.168.91.55</ipaddr>
+				<hostname>homepod-big-boi</hostname>
+				<descr></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime></defaultleasetime>
+				<maxleasetime></maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<numberoptions></numberoptions>
+			</staticmap>
 		</opt2>
 		<opt4>
 			<range>
@@ -275,6 +387,34 @@
 			<filename64arm></filename64arm>
 			<rootpath></rootpath>
 			<numberoptions></numberoptions>
+			<staticmap>
+				<mac>48:e1:e9:2e:a5:da</mac>
+				<cid></cid>
+				<ipaddr>192.168.92.60</ipaddr>
+				<hostname>Meross-Outdoor</hostname>
+				<descr></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime></defaultleasetime>
+				<maxleasetime></maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<numberoptions></numberoptions>
+			</staticmap>
 		</opt4>
 	</dhcpd>
 	<dhcpdv6></dhcpdv6>
@@ -829,6 +969,8 @@
 		<sslcertref>5c33f9b790c19</sslcertref>
 		<forwarding></forwarding>
 		<system_domain_local_zone_type>transparent</system_domain_local_zone_type>
+		<regdhcpstatic></regdhcpstatic>
+		<regdhcp></regdhcp>
 	</unbound>
 	<laggs>
 		<lagg>
@@ -875,8 +1017,8 @@
 		</vlan>
 	</vlans>
 	<revision>
-		<time>1634352507</time>
-		<description><![CDATA[admin@192.168.91.110 (Local Database): DHCP Server settings saved]]></description>
+		<time>1634424559</time>
+		<description><![CDATA[admin@192.168.91.110 (Local Database): Dynamic DNS client configured.]]></description>
 		<username><![CDATA[admin@192.168.91.110 (Local Database)]]></username>
 	</revision>
 	<switches>
@@ -1648,16 +1790,16 @@
 		</squid>
 	</installedpackages>
 	<ppps></ppps>
-	<gateways>
-	</gateways>
+	<gateways></gateways>
 	<dyndnses>
 		<dyndns>
 			<type>googledomains</type>
 			<username><![CDATA[mpwePLSFyCsNKbQS]]></username>
-			<password><![CDATA[Wm9acVZaNmYycjJXYWNLcQ==]]></password>
+			<password><![CDATA[bFc3QnVCdU9VeEFaTHhOdw==]]></password>
 			<host>home.erikjohansson.ca</host>
 			<domainname></domainname>
 			<mx></mx>
+			<wildcard></wildcard>
 			<enable></enable>
 			<interface>wan</interface>
 			<zoneid></zoneid>
